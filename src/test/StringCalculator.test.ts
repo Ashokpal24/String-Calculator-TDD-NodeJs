@@ -27,6 +27,10 @@ describe("StringCalculator", () => {
     expect(calc.add("1001,1")).toBe(1);
     expect(calc.add("1000,96")).toBe(1096);
     expect(calc.add("1000,1,2000")).toBe(1001);
-
+    expect(calc.add("2,1001")).toBe(2);
+  });
+  test("support delimiter of any length", () => {
+    expect(calc.add("//[***]\n1***2***3")).toBe(6);
+    expect(calc.add("//[%%%%]\n1%%%%2%%%%5")).toBe(8);
   });
 });

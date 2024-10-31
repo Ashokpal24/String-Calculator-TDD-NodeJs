@@ -4,12 +4,14 @@ export class StringCalculator {
     if (numbers.length == 1 && !isNaN(Number(numbers))) return Number(numbers);
     let delimiters = /,|\n/;
     if (numbers.startsWith("//")) {
-      delimiters = new RegExp(numbers[2]);
-      numbers = numbers.slice(4);
+      const delimiterEnd = numbers.indexOf("\n");
+      delimiters = new RegExp(numbers.slice(2, delimiterEnd));
+      numbers = numbers.slice(delimiterEnd + 1);
+      console.log(delimiters);
     }
     let numArray = numbers.split(delimiters).map(Number);
     numArray = numArray.filter((num) => num < 1001);
-    // console.log(numArray);
+
     const NegArray = numArray.filter((num) => num < 0);
     if (NegArray.length > 0) {
       throw new Error(`Negatives not allowed: ${NegArray.join(",")}`);
