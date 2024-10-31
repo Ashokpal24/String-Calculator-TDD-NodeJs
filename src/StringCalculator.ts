@@ -7,7 +7,9 @@ export class StringCalculator {
       delimiters = new RegExp(numbers[2]);
       numbers = numbers.slice(4);
     }
-    const numArray = numbers.split(delimiters).map(Number);
+    let numArray = numbers.split(delimiters).map(Number);
+    numArray = numArray.filter((num) => num < 1001);
+    // console.log(numArray);
     const NegArray = numArray.filter((num) => num < 0);
     if (NegArray.length > 0) {
       throw new Error(`Negatives not allowed: ${NegArray.join(",")}`);
