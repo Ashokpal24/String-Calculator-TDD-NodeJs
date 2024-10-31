@@ -1,1 +1,48 @@
-/node_modules
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# TypeScript cache and output
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Jest coverage and cache
+coverage/
+.cache/
+jest/
+
+# Environment variables
+.env
+.env.local
+.env.test
+.env.production
+
+# MacOS and other OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore compiled JavaScript files from TypeScript
+*.js
+*.js.map
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore specific config files (if any)
+.eslintcache
