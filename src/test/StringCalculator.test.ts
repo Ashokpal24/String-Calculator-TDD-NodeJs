@@ -14,4 +14,7 @@ describe("StringCalculator", () => {
   test("returns the sum of two numbers", () => {
     expect(calc.add("1,2")).toBe(3);
   });
+  test("handles newlines as delimiters", () => {
+    expect(calc.add("3\n4,5")).toBe(12);
+  });
 });
