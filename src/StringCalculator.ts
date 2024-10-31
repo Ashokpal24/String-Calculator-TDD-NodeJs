@@ -8,6 +8,10 @@ export class StringCalculator {
       numbers = numbers.slice(4);
     }
     const numArray = numbers.split(delimiters).map(Number);
+    const NegArray = numArray.filter((num) => num < 0);
+    if (NegArray.length > 0) {
+      throw new Error(`Negatives not allowed: ${NegArray.join(",")}`);
+    }
     return numArray.reduce((sum, num) => sum + num, 0);
   }
 }
