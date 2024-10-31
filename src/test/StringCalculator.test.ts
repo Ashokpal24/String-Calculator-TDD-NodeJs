@@ -38,4 +38,10 @@ describe("StringCalculator", () => {
     expect(calc.add("//[*][%]\n1*2%3")).toBe(6);
     expect(calc.add("//[***][%]\n1***5%3")).toBe(9);
   });
+  test("Test only negative inputs", () => {
+    expect(() => calc.add("-1,-2")).toThrow("Negatives not allowed: -1,-2");
+  });
+  test("Test only delimiter inputs", () => {
+    expect(calc.add("//[*][%]\n")).toBe(0);
+  });
 });
