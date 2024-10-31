@@ -78,7 +78,7 @@ try {
 
 ## Tests
 
-This project uses **Jest** for testing. The tests are located in the `__tests__` folder and cover cases like:
+This project uses **Jest** for testing. The tests are located in the `test` folder and cover cases like:
 
 - Empty string input
 - Single number input
@@ -97,6 +97,6 @@ npm test
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-### AUTHOR
+## AUTHOR
 
 [Ashok](https://github.com/Ashokpal24)
